@@ -1,0 +1,37 @@
+<% include ../../public/ui_ux/head %>
+  <div class="container-fluid">
+    <div class="bg-putih atas-bawah-2">
+      <div class="row">
+        <div class="col-md-4 ">
+
+
+        </div>
+        <div class="col-md-4 shadowgray  ">
+          <div class="col-md-12 ">
+            <div class="text-center my-5">
+              <i class="fa fa-sign-in" aria-hidden="true"> LOGIN</i>
+            </div>
+          </div>
+          <div class="col-md-12 atas-bawah-2">
+              <form action="/pemberikerja/login" method="post">
+                <div class="col-md-12 ">
+                  <label for="validationServer01">Username</label>
+                  <input type="text" name ="username" class="my-2 form-control is-valid" id="validationServer01" placeholder=" " required>
+                </div>
+                <div class="col-md-12">
+                  <label for="validationServer01"> Password</label>
+                  <input type="password" name ="password" class="my-2 form-control is-valid" id="validationServer01" placeholder=" " required>
+                </div>
+                <button class="my-5 btn btn-success btn-lg btn-block " type="submit"> LOG IN  </button>
+              </form>
+              <div class="col-md-12"> Belum Punya Akun ?  silankan <a href="/pemberikerja/signup">Daftar </a><div>
+
+          </div>
+
+        </div>
+        <div class="col-md-4"> </div>
+
+      </div>
+    </div>
+  </div>
+<% include ../../public/ui_ux/footer %>

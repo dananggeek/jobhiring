@@ -1,0 +1,62 @@
+<% include ../../public/ui_ux/head %>
+
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 bg-primary">
+
+    </div>
+
+    <div class="col-md-9 bg-polos">
+      <form action="/pemberikerja/ambilkerja" method="post">
+        <div class="col-md-12 ">
+          <label>Nama Lengkap</label>
+          <input type="text" name="namalengkap" class="my-2 inputWarning1" required>
+        </div>
+        <div class="col-md-12 ">
+          <label for="validationServer03">Umur </label>
+          <input type="number" name="umur" class="my-2 form-control is-invalid" id="validationServer03"   required>
+        </div>
+        <div class="col-md-12 ">
+          <label for="validationServer03"> Alamat </label>
+          <input type="text" name="alamat" class="my-2 form-control is-invalid" id="validationServer03"   required>
+        </div>
+        <div class="col-md-12 ">
+          <label for="validationServer03"> No Hp </label>
+          <input type="number" name="nohp" class="my-2 form-control is-invalid" id="validationServer03"   required>
+        </div>
+
+        Pendidikan
+        <div class="pnwas-validated col-md-12">
+          <label for="validationServer05">Pendidikan Terahir </label>
+          <select class="custom-select d-block "  name="pendidikan" required >
+           <option value="">Pendidikan Terahir</option>
+           <option value="laki-laki">SMA</option>
+           <option value="perempuan">Perguruan Tinggi</option>
+         </select>
+        </div>
+        <div class="col-md-12 ">
+          <label for="validationServer03"> Jurusan </label>
+          <input type="text" name="jurusan" class="my-2 form-control is-invalid" id="validationServer03"   required>
+        </div>
+
+        Pengalaman Kerja
+        <div class="col-md-12 ">
+          <label for="validationServer03"> Pengalaman Kerja </label>
+          <input type="text" name="pengalamankerja" class="my-2 form-control is-invalid" id="validationServer03"   required>
+        </div>
+        <div class="col-md-12 ">
+          <label for="validationServer03"> id </label>
+          <input type="text" name="id" value=" <%= ambilkerja._id %>" class="my-2 form-control is-invalid" id="validationServer03"   required >
+        </div>
+
+
+
+        <button class="my-5 btn btn-danger btn-lg btn-block" type="submit"> lamar kerja  </button>
+      </form>
+
+    </div>
+
+  </div
+</div>

@@ -1,0 +1,36 @@
+<% include ../../public/ui_ux/head %>
+<body>
+  <div class="container-fluid">
+    <div class="bg-putih atas-bawah-2">
+      <div class="row">
+        <div class="col-md-4 "> </div>
+        <div class="col-md-4 shadowgray  ">
+          <div class="col-md-12 ">
+            <div class="text-center my-5">
+              <i class="fa fa-sign-in" aria-hidden="true"> LOGIN</i>
+            </div>
+          </div>
+          <div class="col-md-12 atas-bawah-2">
+              <form action="/webcontenmanager/login" method="post">
+                <div class="col-md-12 ">
+                  <label for="validationServer03">username</label>
+                  <input type="text" name="NamaPengguna" class="my-2 form-control is-invalid" id="validationServer03"   required>
+                </div>
+                <div class="col-md-12">
+                  <label for="validationServer03">Password</label>
+                  <input type="password" name="password" class="my-2 form-control is-invalid" id="validationServer03"  required>
+                </div>
+                <button class="my-5 btn btn-danger btn-lg btn-block " type="submit"> LOG IN  </button>
+              </form>
+
+          </div>
+
+        </div>
+        <div class="col-md-4"> </div>
+
+      </div>
+    </div>
+  </div>
+  <% include ../../public/ui_ux/footer %>
+</body>
+</html>

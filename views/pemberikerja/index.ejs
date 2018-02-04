@@ -1,0 +1,43 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/top %>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="my-4 col-sm-12 col-md-4 col-lg-4 col-xl-4 shadowgray">
+        <div class="col-md-12 atas-bawah-2">
+            <form action="/pemberikerja/login" method="post">
+              <div class="col-md-12 ">
+                <label for="validationServer01">Username</label>
+                <input type="text" name ="username" class="my-2 form-control is-valid" id="validationServer01" placeholder=" " required>
+              </div>
+              <div class="col-md-12">
+                <label for="validationServer01"> Password</label>
+                <input type="password" name ="password" class="my-2 form-control is-valid" id="validationServer01" placeholder=" " required>
+              </div>
+              <button class="my-5 btn btn-success btn-lg btn-block " type="submit"> LOG IN  </button>
+            </form>
+            <div class="col-md-12"> Belum Punya Akun ?  silankan <a href="/pemberikerja/signup">Daftar </a><div>
+
+        </div>
+
+      </div>
+      <div class="col-md-4"> </div>
+
+    </div>
+      </div>
+
+
+      <div class="my-4 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <img class="img-fluid d-block mx-auto" src="/bootstrap/img/jobhiring.png">
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <% include ../../public/ui_ux/footer %>
+</body>
+
+</html>

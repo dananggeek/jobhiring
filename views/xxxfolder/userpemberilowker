@@ -1,0 +1,34 @@
+var mongoose = require('mongoose');
+var bcrypt   = require('bcrypt-nodejs');
+
+var pemberikerja = mongoose.Schema(
+  {
+    local: {
+      username: String,
+      password: String,
+    },
+    perusahaan : {lembaga:String,alamat:String,email:String,notelepon:String,},
+    inputlowker :{
+      NamaPekerjaan:String,
+      JenisPekerjaan: {type: String, required: true,unique:true},
+      Kemampuan:String,
+      LokasiPekerjaan:String,
+      NamaPemberiPekerjaan: String,
+      Gaji: String,
+      Email: String,
+      DeskrepsiPekerjaan:String,
+      TanggalInput: String,
+      Tag: String,
+    },
+  },
+  {
+      timestamps: true
+
+  });
+pemberikerja.methods.generateHash = function(password){
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+pemberikerja.methods.validPassword = function(password){
+  return bcrypt.compareSync(password, this.local.password);
+};
+module.exports = mongoose.model('userpemberilowker', pemberikerja);

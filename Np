@@ -1,0 +1,17 @@
+Pencari Kerja
+  CRUD lowker
+    1.Create > berhasil ,
+    2.update > Berhasil
+    3.Detele > berhasil ,
+    4.Object Referense By ._id PencariKerja > Belum berhasil
+
+  Login Pencari Kerja
+    Berhasil
+
+  SignUp Pencari Kerja
+    Berhasil
+
+  Update Profil
+
+
+  /*"mongoose": "^4.12.1", */

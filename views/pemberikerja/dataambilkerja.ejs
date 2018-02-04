@@ -1,0 +1,46 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class="container-fluid my-5">
+
+
+      <% if (ambilkerja!=null) { %>
+      <table class="table table-hover  table-bordered ">
+
+        <thead>
+          <tr class="bg-info">
+
+            <th>Nama lengkap</th>
+            <th>Kelamin</th>
+
+            <th>Nomor  hp </th>
+            <th>Pendidikan SMA/SMK </th>
+            <th>Jurusan </th>
+            <th>status terima kerja </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<ambilkerja.length;i++) { %>
+            <tr>
+              <td><a href="/pemberikerja/datalistinputcv/<%= ambilkerja[i]._id%>">
+                  <%= ambilkerja[i].datadiri.namalengkap%></a></td>
+
+              <td><%= ambilkerja[i].datadiri.kelamin%></a></td>
+
+              <td><%= ambilkerja[i].datadiri.nohp%></td>
+              <td><%= ambilkerja[i].pendidikan.sma %></td>
+              <td><%= ambilkerja[i].pendidikan.jurusan_sma %></td>
+              <td><%= ambilkerja[i].status %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div> Tidak ada pelamar kerja</div>
+      <% } %>
+
+
+</div>
+<% include ../../public/ui_ux/footer %>

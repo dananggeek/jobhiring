@@ -1,0 +1,53 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav_profil_user %>
+
+<div class="container">
+
+    <div class ="col-md-3 2-my"> </div>
+    <div class ="col-md-12 ">
+      <table class="table table-hover table-responsivee">
+          <tbody>
+            <tr>
+              <td>Nama Perusahaan / Lembaga</td>
+              <td><%= pemberikerja.pemberikerja.perusahaan %> </td>
+            </tr>
+
+            <tr>
+              <td> No Telepon </td>
+              <td><%= pemberikerja.pemberikerja.notelepon %> </td>
+            </tr>
+            <tr>
+              <td> Deskrepsi  </td>
+              <td> <%= pemberikerja.pemberikerja.deskrepsi %></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center  col-md-2"><i class="d-block mx-auto fa fa-2x fa-map-marker"></i> </div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Alamat Perusahaan</b></h5>
+              <p class="my-1"><%= pemberikerja.pemberikerja.alamat  %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-md-2"><i class="d-block mx-auto fa fa-2x fa-envelope-o"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Email</b></h5>
+              <p class="my-1"> <%= pemberikerja.login.email %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+<% include ../../public/ui_ux/footer %>

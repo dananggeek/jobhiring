@@ -1,0 +1,114 @@
+router.post('/addlowker/(:user)',  Auth_mdw.check_login, function (req, res, next){ //hapus Auth_mdw.check_login, Auth_mdw.is_admin,
+//router.get('/editlowker/(:id)', function(req, res, next){ // Auth_mdw.check_login, Auth_mdw.is_admin//
+
+
+    session_store = req.session;
+
+    req.assert('NamaPekerjaan', 'Nama NamaPekerjaan').notEmpty();
+    req.assert('JenisPekerjaan', 'JenisPekerjaan diperlukan').notEmpty();
+    req.assert('Kemampuan', 'Kemampuan').notEmpty();
+    req.assert('LokasiPekerjaan', 'Alamat Lengkap').notEmpty();
+    req.assert('NamaPemberiPekerjaan', 'NamaPemberiPekerjaan').notEmpty();
+    req.assert('Email', 'email tidak benar').isEmail().withMessage('E-mail tidak valid').notEmpty();
+    req.assert('TanggalInput', 'Tanggal sekarang ').notEmpty();
+    req.assert('Tag', 'Tag Pekerjaan').notEmpty();
+    req.assert('Gaji', 'Gaji Pekerjaan').notEmpty();
+    req.assert('DeskrepsiPekerjaan', 'DeskrepsiPekerjaan').notEmpty();
+
+
+    var errors = req.validationErrors();
+    console.log(errors);
+
+    if (!errors)
+    {
+        i_NamaPekerjaan = req.sanitize( 'NamaPekerjaan' ).escape().trim();
+        i_JenisPekerjaan = req.sanitize( 'JenisPekerjaan' ).escape().trim();
+        i_Kemampuan = req.sanitize( 'Kemampuan' ).escape().trim();
+        i_LokasiPekerjaan = req.sanitize( 'LokasiPekerjaan' ).escape().trim();
+        i_NamaPemberiPekerjaan = req.sanitize( 'NamaPemberiPekerjaan' ).escape().trim();
+        i_Email = req.sanitize( 'Email' ).escape().trim();
+        i_TanggalInput = req.sanitize( 'TanggalInput' ).escape().trim();
+        i_Tag = req.sanitize( 'Tag' ).escape().trim();
+        i_Gaji = req.sanitize( 'Gaji' ).escape().trim();
+        i_DeskrepsiPekerjaan = req.sanitize( 'DeskrepsiPekerjaan' ).escape().trim();
+
+        User.find({ 'inputlowker.NamaPekerjaan': req.param('NamaPekerjaan') }, function (err, row){
+            if (row.length == 0)
+            {
+                var jabatan = new User({
+                    'inputlowker.NamaPekerjaan':i_NamaPekerjaan,
+                    'inputlowker.JenisPekerjaan':i_JenisPekerjaan,
+                    'inputlowker.Kemampuan':i_Kemampuan,
+                    'inputlowker.LokasiPekerjaan':i_LokasiPekerjaan,
+                    'inputlowker.NamaPemberiPekerjaan':i_NamaPemberiPekerjaan,
+                    'inputlowker.Email':i_Email,
+                    'inputlowker.TanggalInput':i_TanggalInput,
+                    'inputlowker.Tag':i_Tag,
+                    'inputlowker.Gaji':i_Gaji,
+                    'inputlowker.DeskrepsiPekerjaan':i_DeskrepsiPekerjaan,
+
+                });
+
+                jabatan.save(function(err) {
+                    if (err)
+                    {
+                        console.log(err);
+
+                        req.flash('msg_error', 'Maaf, sepertinya ada masalah dengan sistem / Programkami...');
+                        res.redirect('/pemberikerja/addlowker');
+                    }
+                    else
+                    {
+                        req.flash('msg_info', 'Jabatan berhasil dibuat...');
+                        res.redirect('/pemberikerja');
+                    }
+                });
+            }
+            else
+            {
+                req.flash('msg_error', 'Maaf lowongan kerja sudah ada');
+                res.render('pemberikerja/addlowker', {
+                    session_store:session_store,
+                    NamaPekerjaan: req.param('NamaPekerjaan'),
+                    JenisPekerjaan: req.param('JenisPekerjaan'),
+                    Kemampuan: req.param('Kemampuan'),
+                    LokasiPekerjaan: req.param('LokasiPekerjaan'),
+                    NamaPemberiPekerjaan: req.param('NamaPemberiPekerjaan'),
+                    Email: req.param('Email'),
+                    TanggalInput: req.param('TanggalInput'),
+                    Tag: req.param('Tag'),
+                    Gaji: req.param('Gaji'),
+                    DeskrepsiPekerjaan:req.param('DeskrepsiPekerjaan'),
+                });
+            }
+        });
+    }
+    else
+    {
+        // menampilkan pesan error
+        errors_detail = "<p>Punten, sepertinya ada salah pengisian, mangga check lagi formnyah!</p><ul>";
+
+        for (i in errors)
+        {
+            error = errors[i];
+            errors_detail += '<li>'+error.msg+'</li>';
+        }
+
+        errors_detail += "</ul>";
+
+        req.flash('msg_error', errors_detail);
+        res.render('pemberikerja/addlowker', {
+            session_store: session_store,
+            NamaPekerjaan: req.param('NamaPekerjaan'),
+            JenisPekerjaan: req.param('JenisPekerjaan'),
+            Kemampuan: req.param('Kemampuan'),
+            LokasiPekerjaan: req.param('LokasiPekerjaan'),
+            NamaPemberiPekerjaan: req.param('NamaPemberiPekerjaan'),
+            Email: req.param('Email'),
+            TanggalInput: req.param('TanggalInput'),
+            Tag: req.param('Tag'),
+            Gaji: req.param('Gaji'),
+            DeskrepsiPekerjaan:req.param('DeskrepsiPekerjaan'),
+        });
+    }
+});

@@ -1,0 +1,106 @@
+//edit lowker
+router.get('/editlowker/(:id)', function(req, res, next){ // Auth_mdw.check_login, Auth_mdw.is_admin
+    session_store = req.session;
+
+    Input.findOne({_id:req.params.id}, function (err, row){
+        if (row)
+        {
+            console.log(row);
+
+            res.render('pemberikerja/editlowker', { session_store:session_store, pemberikerja:  row});
+        }
+        else
+        {
+            req.flash('msg_error', 'Punten, jabatan tidak ditemukan!');
+            res.redirect('/pemberikerja');
+        }
+    });
+});
+
+router.put('/editlowker/(:id)', function(req, res, next){
+//router.put('/edit/(:id)',
+
+  session_store= req.session;
+  //req.assert= ('NamaPemberiPekerjaan','NamaPemberiPekerjaan').notEmpty();
+  req.assert('NamaPekerjaan', 'Nama NamaPekerjaan').notEmpty();
+  req.assert('JenisPekerjaan', 'JenisPekerjaan diperlukan').notEmpty();
+  req.assert('Kemampuan', 'Kemampuan').notEmpty();
+  req.assert('LokasiPekerjaan', 'Alamat Lengkap').notEmpty();
+  req.assert('NamaPemberiPekerjaan', 'NamaPemberiPekerjaan').notEmpty();
+  req.assert('Email', 'email tidak benar').isEmail().withMessage('E-mail tidak valid').notEmpty();
+//  req.assert('TanggalInput', 'Tanggal sekarang ').notEmpty();
+  req.assert('Tag', 'Tag Pekerjaan').notEmpty();
+  req.assert('Gaji', 'Gaji Pekerjaan').notEmpty();
+  req.assert('DeskrepsiPekerjaan', 'DeskrepsiPekerjaan').notEmpty();
+  var errors = req.validationErrors();
+  console.log(errors);
+
+  if (!errors)
+  {
+    i_NamaPekerjaan = req.sanitize( 'NamaPekerjaan' ).escape().trim();
+    i_JenisPekerjaan = req.sanitize( 'JenisPekerjaan' ).escape().trim();
+    i_Kemampuan = req.sanitize( 'Kemampuan' ).escape().trim();
+    i_LokasiPekerjaan = req.sanitize( 'LokasiPekerjaan' ).escape().trim();
+    i_NamaPemberiPekerjaan = req.sanitize( 'NamaPemberiPekerjaan' ).escape().trim();
+    i_Email = req.sanitize( 'Email' ).escape().trim();
+  //  i_TanggalInput = req.sanitize( 'TanggalInput' ).escape().trim();
+    i_Tag = req.sanitize( 'Tag' ).escape().trim();
+    i_Gaji = req.sanitize('Gaji').escape().trim();
+    i_DeskrepsiPekerjaan = req.sanitize('DeskrepsiPekerjaan').escape().trim();
+
+    Input.findById(req.params.id, function (err , row){
+      row.NamaPekerjaan=i_NamaPekerjaan;
+      row.JenisPekerjaan=i_JenisPekerjaan;
+      row.Kemampuan=i_Kemampuan;
+      row.LokasiPekerjaan=i_LokasiPekerjaan;
+      row.NamaPemberiPekerjaan=i_NamaPekerjaan;
+      row.Email=i_Email;
+  //    row.TanggalInput=i_TanggalInput;
+      row.tag=i_Tag;
+      row.Gaji=i_Gaji;
+      row.DeskrepsiPekerjaan=i_DeskrepsiPekerjaan;
+
+      row.save(function(err){
+          if (err)
+          {
+            console.log(err);
+            req.flash('msg_error','Ada kesalahan sistem');
+            res.redirect('/pemberikerja');
+          }
+          else {
+            req.flash('msg_info','Berhasil Edit');
+            res.redirect('/pemberikerja');
+          }
+      });
+
+    });
+  }
+  else{
+    errors_detail = " <p> Ada Kesalahan Pengisian , silahkan check lagi </p> <ul>";
+    for (i in error)
+    {
+      error=errors[i];
+      errors_detail+= '<li>'+error.msg+'</li>';
+    }
+    errors_detail += "</ul>";
+
+    req.flash('msg_error', errors_detail);
+    res.render('pemberikerja/editlowker', {
+      _id:req.params.id,
+      session_store: session_store,
+      NamaPekerjaan: req.param('NamaPekerjaan'),
+      JenisPekerjaan: req.param('JenisPekerjaan'),
+      Kemampuan: req.param('Kemampuan'),
+      LokasiPekerjaan: req.param('LokasiPekerjaan'),
+      NamaPemberiPekerjaan: req.param('NamaPemberiPekerjaan'),
+      Email: req.param('Email'),
+  //    TanggalInput: req.param('TanggalInput'),
+      Tag: req.param('Tag'),
+      Gaji: req.param('Gaji'),
+      DeskrepsiPekerjaan: req.param('DeskrepsiPekerjaan'),
+
+    });
+  }
+
+});
+//ahir edit lowker

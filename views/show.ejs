@@ -1,0 +1,93 @@
+<% include ../public/ui_ux/head %>
+<nav class="navbar navbar-light bg-light justify-content-between">
+
+  <a href="/list"class="navbar-brand">Lowongan Pekerjaan</a>
+  <form class="form-inline" action="/list" method="GET">
+    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+<div class=" py-5 bg-light ">
+  <div class="container">
+    <table class="table table-hover ">
+        <tbody>
+          <tr>
+
+            <td> Pemberi Kerja Oleh  </td>
+            <td> <a href="/pemberikerja/profil/user/<%=addlowker.author %>" target=blank>Detail PemberiKerja</a></td>
+          </tr>
+          <tr>
+            <td> NamaPekerjaan </td>
+            <td> <%= addlowker.NamaPekerjaan %></td>
+          </tr>
+          <tr>
+            <td>Jenis Pekerjaan</td>
+            <td><%= addlowker.JenisPekerjaan %> </td>
+          </tr>
+          <tr>
+            <td> Kemampuan </td>
+            <td><%= addlowker.Kemampuan %> </td>
+          </tr>
+          <tr>
+            <td> Lokasi Pekerjaan </td>
+            <td> <%= addlowker.LokasiPekerjaan %></td>
+          </tr>
+          <tr>
+            <td> Tag </td>
+            <td> <%= addlowker.Tag %></td>
+          </tr>
+          <tr>
+            <td> Gaji </td>
+            <td>Rp.<%= addlowker.Gaji %> </td>
+          </tr>
+          <tr>
+            <td>Deskrepsi Pekerjaan</td>
+            <td><%= addlowker.DeskrepsiPekerjaan %></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-map-marker"></i> </div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Lokasi Pekerjaan</b></h5>
+              <p class="my-1"><%= addlowker.LokasiPekerjaan %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-envelope-o"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Email</b></h5>
+              <p class="my-1"> <%= addlowker.Email %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-volume-control-phone"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Telepon</b></h5>
+              <p class="my-1"><%= addlowker.nohp %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+
+
+    <!-- <a href="/pemberikerja/editlowkers/<%= addlowker._id%>"> <button type="button" class="btn btn-primary">Edit</button></a>
+    -->
+  <a href="/pencarikerja/ambilkerja/<%= addlowker._id %>" class="text-right btn btn-primary">Lamar Pekerjaan</a>
+
+  </div>
+
+</div>
+<% include ../public/ui_ux/footer %>

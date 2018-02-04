@@ -1,0 +1,50 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pencarikerja_nav_index %>
+
+<div class="container">
+
+
+      <% if (listlamarkerja.length>0) { %>
+      <table class="my-5 table table-hover   table-responsive  ">
+
+        <thead>
+          <tr class="table-active bg-info ">
+
+            <th>Nama lengkap</th>
+            <th>Kelamin</th>
+            <th>Nomor  hp </th>
+            <th>Pendidikan SMA/SMK </th>
+            <th>Jurusan </th>
+            <th>status terima kerja </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<listlamarkerja.length;i++) { %>
+            <tr>
+              <td><a href="/pencarikerja/listlamarkerja/<%= listlamarkerja[i]._id%>">
+                  <%= listlamarkerja[i].datadiri.namalengkap%></a></td>
+              <td><%= listlamarkerja[i].datadiri.kelamin%></a></td>
+              <td><%= listlamarkerja[i].datadiri.nohp%></td>
+              <td><%= listlamarkerja[i].pendidikan.sma %></td>
+              <td><%= listlamarkerja[i].pendidikan.jurusan_sma %></td>
+              <td><%= listlamarkerja[i].status %></td>
+            </tr>
+          <% } %>
+
+
+        </tbody>
+      </table>
+      <% } else { %>
+        <div> Tidak ada lamaran kerja</div>
+      <% } %>
+
+
+
+
+
+<% include ../../public/ui_ux/footer %>
+
+
+</div>

@@ -1,0 +1,50 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"> <!-- Grid 1-->
+      <!-- Di Kosongi-->
+    </div>
+    <div class="col-md-8"> <!-- Grid 2 -->
+      <form  action="/pemberikerja/inputlowker" method="post">
+        <div class="form-group has-warning">
+          <label class="control-label" for="inputWarning1">NamaPekerjaan</label>
+          <input type="text" class="form-control" id="inputWarning1" name="NamaPekerjaan" /required>
+        </div>
+        <div class="form-group"> <label for="">Jenis Pekerjaan</label>
+          <input type="text" class="form-control" id="" placeholder=" " name="JenisPekerjaan" /required>
+        </div>
+        <div class="form-group"> <label for="">Kemampuan </label>
+          <input type="text" class="form-control" id="" placeholder="  " name="Kemampuan"   /required>
+        </div>
+        <div class="form-group"> <label for=""> LokasiPekerjaan</label>
+          <input type="text" class="form-control" id="" placeholder="  " name="LokasiPekerjaan" /required>
+        </div>
+        <div class="form-group"> <label for=""> Tag</label>
+          <input type="text" class="form-control" id="" placeholder="  " name="Tag" /required>
+        </div>
+        <div class="form-group has-success has-feedback">
+          <label class="control-label" for="inputGroupSuccess1">Gaji</label>
+          <div class="input-group">
+            <span class="input-group-addon">Rp</span>
+            <input type="number" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" name="Gaji" /required>
+          </div>
+        </div>
+        <div class="form-group"> <label for=""> Email </label>
+          <input type="email" class="form-control" id="" placeholder="Masukan email " name="Email" /required>
+        </div>
+        <div class="form-group"> <label for="Textarea">Deskrepsi Pekerjaan</label>
+           <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here" name="DeskrepsiPekerjaan" /required></textarea>
+        </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-2"> <!-- Grid 3-->
+      <!-- Di Kosongi-->
+    </div>
+  </div>
+  <% include ../../public/ui_ux/footer %>
+<div>

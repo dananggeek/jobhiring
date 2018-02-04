@@ -1,0 +1,16 @@
+<% include ../public/ui_ux/head %>
+<body>
+  <div class="container">
+    <div class=" jumbotron bg-polos">
+      <div class="text-center">
+        <h1> <%= error.status %> </h1> <pre> </pre>
+        <h1>  <%= message %> </h1> <pre> </pre>
+        <a href="/" class="btn btn-default"><span class="fa fa-home"></span> Home</a>
+        <pre> </pre>
+        <%= error.stack %>
+      </div>
+
+    </div>
+  </div>
+
+</body>

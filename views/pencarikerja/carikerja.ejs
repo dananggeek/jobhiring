@@ -1,0 +1,41 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class="container">
+
+
+      <% if (addlowkers.length>0) { %>
+      <table class="table table-hover table-responsive">
+
+        <thead>
+          <tr class="table-active">
+
+            <th>Nama Pekerjaan</th>
+            <th>Jenis Pekerjaan</th>
+            <th>Kemampuan </th>
+            <th>Lokasi Pekerjaan </th>
+            <th>Gaji </th>
+            <th>Tanggal Input </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<addlowkers.length;i++) { %>
+            <tr>
+              <
+              <td><%= carikerja[i].JenisPekerjaan%></td>
+              <td><%= carikerja[i].Kemampuan %></td>
+              <td><%= carikerja[i].LokasiPekerjaan%></td>
+              <td><%= carikerja[i].Gaji %></td>
+              <td><%= carikerja[i].TanggalInput %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div> Tidak ada lowongankerja</div>
+      <% } %>
+
+<% include ../../public/ui_ux/footer %>
+<div

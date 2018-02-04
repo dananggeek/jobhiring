@@ -1,0 +1,130 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pencarikerja_nav_index %>
+<div class="container my-5">
+  <form  action="/pencarikerja/ambilkerja" method="post" enctype="multipart/formdata" >
+  <div class="row">
+
+    <div class="col-md-12 bg-poloss">
+
+        <h4> Data diri</h4>
+        <p> </p> <p> </p>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">nama lengkap</label>
+            <input type="text" name="namalengkap" class="form-control is-valid" id="validationServer01"    required>
+          </div>
+          <div class="pnwas-validated col-md-6">
+            <label for="validationServer05">Kelamin </label>
+            <select class="form-control is-valid "  name="kelamin" required >
+             <option value="">kelamin</option>
+             <option value="perempuan">perempuan</option>
+             <option value="laki-laki">laki-laki</option>
+
+           </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 ">
+            <label for="validationServer03">Tempat Lahir </label>
+            <input type="text" name="tempat_lahir" class="my-2 form-control is-valid" id="validationServer03"   required>
+          </div>
+          <div class="col-md-6 ">
+            <label for="validationServer03"> Tanggal Lahir </label>
+            <input type="date" name="tanggal_lahir" class="my-2 form-control is-valid" id="validationServer03"   required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">alamat_asal</label>
+            <input type="text" name="alamat_asal" class="form-control is-valid" id="validationServer01"    required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationServer02">alamat_tinggal</label>
+            <input type="password" name="alamat_tinggal" class="form-control is-valid" id="validationServer02"    required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">nohp</label>
+            <input type="text" name="nohp" class="form-control is-valid" id="validationServer01"    required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationServer02">email</label>
+            <input type="text" name="email" class="form-control is-valid" id="validationServer02"    required>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="pnwas-validated col-md-6">
+            <label for="validationServer05">Agama </label>
+            <select class="form-control is-valid "  name="agama" required >
+             <option value="">Agama</option>
+             <option value="islam">islam</option>
+             <option value="katolik">katolik</option>
+             <option value="kristen">kristen</option>
+             <option value="hindu">hindu</option>
+             <option value="budha">budha</option>
+           </select>
+          </div>
+
+
+        </div>
+
+
+        <p> </p> <p> </p>
+        <h4> Pendidikan </h4>
+        <p> </p> <p> </p>
+        <div class="row">
+          <div class="pnwas-validated col-md-6">
+            <label for="validationServer05">Pendidikan Menengah Atas </label>
+            <select class="my-2 form-control is-valid "  name="pendidikan_sma" required >
+             <option value="">Pendidikan Terahir</option>
+             <option value="sma">SMA</option>
+             <option value="smk">SMK</option>
+           </select>
+          </div>
+          <div class="col-md-6 ">
+            <label for="validationServer03"> Jurusan </label>
+            <input type="text" name="jurusan_sma" class="my-2 form-control is-valid" id="validationServer03"   required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <label for="validationServer03"> Pendidikan Perguruan Tinggi </label>
+            <input type="text" name="kuliah" class="my-2 form-control is-valid" id="validationServer03">
+          </div>
+          <div class="col-md-6 ">
+            <label for="validationServer03"> Jurusan </label>
+            <input type="text" name="jurusan_kuliah" class="my-2 form-control is-valid" id="validationServer03" >
+          </div>
+        </div>
+      <p> </p> <p> </p>
+      <h4> Pengalaman Kerja </h4>
+      <p> </p> <p> </p>
+      <div class="form-group"> <label for="Textarea">Pengalaman Pekerjaan</label>
+         <textarea class="my-2 form-control is-valid" id="Textarea" rows="3" name="pengalamankerja"></textarea>
+      </div>
+
+
+
+        <div class="row">
+          <div class="col-md-12 ">
+            <label>id lowker</label>
+
+            <input type="text" readonly class="my-2 form-control-plaintext"   name="idlowker" value= "<%= ambilkerja._id %>">
+          </div>
+        </div>
+
+
+
+
+        <button class="my-5 btn btn-success btn-lg btn-success " name="userpemberilowker" value="<%=ambilkerja.author%>" type="submit"> Lamar Kerja  </button>
+
+    </div>
+
+  </div>
+</form>
+<% include ../../public/ui_ux/footer %>
+</div>

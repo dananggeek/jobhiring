@@ -1,0 +1,42 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/webcontenmanager_nav %>
+
+
+<div class="container-fluid">
+
+      <% if (pemberikerjas.length>0) { %>
+      <table class="table table-bordered ">
+
+        <thead>
+          <tr class="table-active ">
+
+            <th>Usernama</th>
+
+            <th>Perusaaan</th>
+            <th>Alamat </th>
+            <th>Email </th>
+            <th>No Telepon </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<pemberikerjas.length;i++) { %>
+            <tr>
+
+              <td><a href="/webcontenmanager/showpemberikerja/<%= pemberikerjas[i]._id%>"><%= pemberikerjas[i].login.username%></a></td>
+
+              <td><%= pemberikerjas[i].pemberikerja.perusahaan%></td>
+              <td><%= pemberikerjas[i].pemberikerja.alamat %></td>
+              <td><%= pemberikerjas[i].login.email%></td>
+              <td><%= pemberikerjas[i].pemberikerja.notelepon %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No employees found.</div>
+      <% } %>
+
+<div>
+<% include ../../public/ui_ux/footer %>

@@ -1,0 +1,49 @@
+<% include ../public/ui_ux/head %>
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+
+    <a href="/"class="navbar-brand">Lowongan Pekerjaan</a>
+    <form class="form-inline" action="/list" method="GET">
+      <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+<body>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <% if (addlowkers.length>0) { %>
+          <% for(var i=0; i<addlowkers.length;i++) { %>
+            <div class="p-3 align-self-center col-md-12">
+              <div class="card ">
+                <div class="card-header "> <!-- <a href="/list/detail/<%=addlowkers[i]._id %>">  </a>--> <%= addlowkers[i].NamaPekerjaan%> </div>
+                  <div class="card-block p-4">
+                  <div class="mb-4 text-right"> <%= addlowkers[i].createdAt %> </div>
+                  <div class=" col-md-12">
+                    <div class="row">
+                      <div class="text-center col-1"><i class="text-danger d-block mx-auto fa fa-2x fa-map-marker"></i> </div>
+                      <div class="col-11">
+                        <h5 class="mb-4 text-danger">Lokasi Pekerjaan %></h5>
+                        <p class="my-4 text-danger"><%= addlowkers[i].LokasiPekerjaan %> </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4 col-md-12">
+                   <%= addlowkers[i].DeskrepsiPekerjaan %>
+                 </div>
+
+                  <a href="/list/detail/<%=addlowkers[i]._id %>" class="text-right btn btn-dark">Baca</a>
+
+                  </div>
+              </div>
+            </div>
+          <% } %>
+        <% } else { %>
+        <div>Tidak ada lowongan Kerja</div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+<% include ../public/ui_ux/footer %>
+</body>
+</html>

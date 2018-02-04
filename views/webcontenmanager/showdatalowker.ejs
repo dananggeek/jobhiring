@@ -1,0 +1,86 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/webcontenmanager_nav %>
+
+<div class=" py-5 bg-light ">
+  <div class="container">
+    <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td> NamaPekerjaan </td>
+            <td> <%= addlowker.NamaPekerjaan %></td>
+          </tr>
+          <tr>
+            <td>Jenis Pekerjaan</td>
+            <td><%= addlowker.JenisPekerjaan %> </td>
+          </tr>
+          <tr>
+            <td> Kemampuan </td>
+            <td><%= addlowker.Kemampuan %> </td>
+          </tr>
+          <tr>
+            <td> Lokasi Pekerjaan </td>
+            <td> <%= addlowker.LokasiPekerjaan %></td>
+          </tr>
+          <tr>
+            <td> Gaji </td>
+            <td>Rp.<%= addlowker.Gaji %> </td>
+          </tr>
+
+          <tr>
+            <td>Deskrepsi Pekerjaan</td>
+            <td><%= addlowker.DeskrepsiPekerjaan %></td>
+          </tr>
+          <tr>
+            <td> Tanggal Input</td>
+            <td><%= addlowker.createdAt %></td>
+          </tr>
+          <tr>
+            <td>Pemberi Kerja</td>
+            <td><a href="/webcontenmanager/showpemberikerja/<%= addlowker.author%>"> Detail Pemberi Kerja</a></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-map-marker"></i> </div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Lokasi Pekerjaan</b></h5>
+              <p class="my-1"><%= addlowker.LokasiPekerjaan %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-envelope-o"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Email</b></h5>
+              <p class="my-1"><%= addlowker.Email %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-volume-control-phone"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Telepon</b></h5>
+              <p class="my-1"><%= addlowker.notelepon %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+      <form action="/webcontenmanager/delete/<%= addlowker._id%>" method="post">
+          <button type="submit" class="btn btn-outline-primary right"><i class="fa d-inline fa-lg fa-trash-o"></i>&nbsp; &nbsp;Hapus &nbsp; &nbsp;</button>
+
+      </form>
+
+
+  </div>
+</div>
+<% include ../../public/ui_ux/footer %>

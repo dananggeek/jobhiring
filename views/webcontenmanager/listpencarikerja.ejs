@@ -1,0 +1,42 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/webcontenmanager_nav %>
+
+
+<div class="container">
+
+      <% if (pencarikerja.length>0) { %>
+      <table class="table table-hover table-bordered  ">
+
+        <thead>
+          <tr class="table-active bg-primary">
+
+            <th>Username</th>
+            <th>Email</th>
+            <th>Nama </th>
+            <th>Alamat </th>
+            <th>Kelamin </th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<pencarikerja.length;i++) { %>
+            <tr>
+
+              <td><a href="/webcontenmanager/listpencarikerja/<%= pencarikerja[i]._id%>"><%= pencarikerja[i].login.username%></a></td>
+              <td><%= pencarikerja[i].login.email %></td>
+              <td><%= pencarikerja[i].pencarikerja.nama%></td>
+              <td><%= pencarikerja[i].pencarikerja.alamat %></td>
+              <td><%= pencarikerja[i].pencarikerja.kelamin%></td>
+
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>Tidak Ada Pencarikerja.</div>
+      <% } %>
+
+
+<div>
+<% include ../../public/ui_ux/footer %>

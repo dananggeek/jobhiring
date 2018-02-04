@@ -1,0 +1,46 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/webcontenmanager_nav %>
+
+
+<div class=" py-5 bg-light ">
+  <div class="container">
+    <table class="table table-hover ">
+        <tbody>
+          <tr>
+            <td> Usernama </td>
+            <td><%= pemberikerja.login.username %> </td>
+
+          </tr>
+          <tr>
+            <td>Nama Perusahaan / Lembaga</td>
+            <td><%= pemberikerja.pemberikerja.perusahaan %> </td>
+          </tr>
+          <tr>
+            <td> Alamat </td>
+            <td><%= pemberikerja.pemberikerja.alamat  %> </td>
+          </tr>
+          <tr>
+            <td> Email </td>
+            <td> <%= pemberikerja.login.email %></td>
+          </tr>
+          <tr>
+            <td> No Telepon </td>
+            <td><%= pemberikerja.pemberikerja.notelepon %> </td>
+          </tr>
+          <tr>
+            <td> Deskrepsi  </td>
+            <td> <%= pemberikerja.pemberikerja.deskrepsi %></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+      <form action="/webcontenmanager/hapuspemberikerja/<%= pemberikerja._id%>" method="post">
+          <button type="submit" class="btn btn-outline-primary right"><i class="fa d-inline fa-lg fa-trash-o"></i>&nbsp; &nbsp;Hapus &nbsp; &nbsp;</button>
+      </form>
+
+
+
+  </div>
+</div>
+<% include ../../public/ui_ux/footer %>

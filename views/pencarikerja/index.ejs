@@ -1,0 +1,56 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/top %>
+<body>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="my-4 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        <img class="img-fluid d-block mx-auto" src="/bootstrap/img/findjob.png">
+
+      </div>
+
+      <div class="my-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 shadowgray">
+        <form action="/pencarikerja/login" method="post">
+          <div class="col-md-12 my-4">
+            <label for="validationServer03">username</label>
+            <input type="text" name="username" class="my-2 form-control is-invalid" id="validationServer03"   required>
+          </div>
+          <div class="col-md-12">
+            <label for="validationServer03">Password</label>
+            <input type="password" name="password" class="my-2 form-control is-invalid" id="validationServer03"  required>
+          </div>
+          <button class="my-5 btn btn-danger btn-lg btn-block " type="submit"> LOG IN  </button>
+        </form>
+        <div class="col-md-12"> Belum Punya Akun ?  silankan <a href="/pencarikerja/register">Daftar </a><div>
+          <p>Atau Pergi Ke halaman <a href="/">Utama</a>.</p>
+
+
+      </div>
+
+
+    </div>
+    <!--
+    <div class="row">
+      <div class="my-4 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        <center> <h1> CARI KERJA</h1> </center>
+        <p>  Temukan Pekerjaan Yang Kamu Inginkan Dengan
+        Akses Jangkuan Yang Lebih luas ,Dan Tersedia Banyak Lowongan Kerja </p>
+
+      </div>
+      <div class="my-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <img class="img-fluid d-block mx-auto" src="/bootstrap/img/job2.png">
+      </div>
+      <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11">
+        <a href="/pencarikerja/register" type="button" class="btn btn-outline-warning btn-block">Register</a>
+        <a href="/pencarikerja/login" class="btn btn-outline-warning btn-block">Log In</a>
+        <img class="img-fluid d-block mx-auto" src="/bootstrap/img/job1.png">
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+      <div class="my-5"> </div>
+
+    -->
+  </div>
+<% include ../../public/ui_ux/footer %>
+</body>

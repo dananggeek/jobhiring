@@ -1,0 +1,89 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pencarikerja_nav_index %>
+
+<div class=" py-5 bg-light ">
+  <div class="container">
+
+    <table class="table table-hover  ">
+      <tbody>
+        <td><h4> Informasi Datadiri </h4></td>
+        <tr>
+          <td> Nama Legkap </td>
+          <td> <%= detaillistlamarkerja.datadiri.namalengkap %></td>
+        </tr>
+        <tr>
+          <td>Kelamin</td>
+          <td><%= detaillistlamarkerja.datadiri.kelamin %> </td>
+        </tr>
+        <tr>
+          <td> Tempat lahir </td>
+          <td><%= detaillistlamarkerja.datadiri.tempat_lahir %> </td>
+        </tr>
+        <tr>
+          <td> Tanggal lahir </td>
+          <td> <%= detaillistlamarkerja.datadiri.tanggal_lahir%></td>
+        </tr>
+        <tr>
+          <td> Alamat asal </td>
+          <td><%= detaillistlamarkerja.datadiri.alamat_asal %> </td>
+        </tr>
+        <tr>
+          <td> Alamat tinggal </td>
+          <td><%= detaillistlamarkerja.datadiri.alamat_tinggal %> </td>
+        </tr>
+        <tr>
+          <td> No Hp </td>
+          <td><%= detaillistlamarkerja.datadiri.nohp %> </td>
+        </tr>
+        <tr>
+          <td> email </td>
+          <td><%= detaillistlamarkerja.datadiri.email %> </td>
+        </tr>
+        <tr>
+          <td> agama </td>
+          <td><%= detaillistlamarkerja.datadiri.agama %> </td>
+        </tr>
+
+        <td><p></p><p></p><p></p><h4> Informasi Pendidikan </h4></td>
+        <tr>
+          <td> SMA /SMK </td>
+          <td><%= detaillistlamarkerja.pendidikan.sma %> </td>
+        </tr>
+
+        <tr>
+          <td> Jurusan SMA /SMK </td>
+          <td><%= detaillistlamarkerja.pendidikan.jurusan_sma %> </td>
+        </tr>
+        <tr>
+          <td> Perguruan Tinggi </td>
+          <td><%= detaillistlamarkerja.pendidikan.kuliah %> </td>
+        </tr>
+        <tr>
+          <td> Jurusan Perguruan Tinggi </td>
+          <td><%= detaillistlamarkerja.pendidikan.jurusan_kuliahJurusan  %> </td>
+        </tr>
+        <p></p>
+        <td><p></p><h4> Pengalamankerja </h4></td>
+        <tr>
+          <td> Pengalamankerja </td>
+          <td><%= detaillistlamarkerja.pengalamankerja %> </td>
+        </tr></p>
+
+        <td> <p> <h4> lowongankerja </h4> </p></td>
+        <tr>
+          <td> lowongankerja </td>
+
+          <td><a href="/list/detail/<%= detaillistlamarkerja.idlowker %>" target=blank>detail lowongan kerja</a></td>
+        </tr>
+
+      </tbody>
+      </table>
+
+
+
+
+
+  </form>
+  </div>
+</div>
+<% include ../../public/ui_ux/footer %>

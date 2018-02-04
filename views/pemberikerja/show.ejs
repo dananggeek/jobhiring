@@ -1,0 +1,89 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class=" py-5 bg-light ">
+  <div class="container">
+    <table class="table table-hover ">
+        <tbody>
+          <tr>
+            <td> NamaPekerjaan </td>
+            <td> <%= addlowker.NamaPekerjaan %></td>
+          </tr>
+          <tr>
+            <td>Jenis Pekerjaan</td>
+            <td><%= addlowker.JenisPekerjaan %> </td>
+          </tr>
+          <tr>
+            <td> Kemampuan </td>
+            <td><%= addlowker.Kemampuan %> </td>
+          </tr>
+          <tr>
+            <td> Lokasi Pekerjaan </td>
+            <td> <%= addlowker.LokasiPekerjaan %></td>
+          </tr>
+          <tr>
+            <td> Tag  </td>
+            <td> <%= addlowker.Tag %></td>
+          </tr>
+          <tr>
+            <td> Gaji </td>
+            <td>Rp.<%= addlowker.Gaji %> </td>
+          </tr>
+          <tr>
+            <td>Deskrepsi Pekerjaan</td>
+            <td><%= addlowker.DeskrepsiPekerjaan %></td>
+          </tr>
+          <tr>
+            <td> Tanggal Input</td>
+            <td><%= addlowker.createdAt %></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-map-marker"></i> </div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Lokasi Pekerjaan</b></h5>
+              <p class="my-1"><%= addlowker.LokasiPekerjaan %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-envelope-o"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Email</b></h5>
+              <p class="my-1"><%= addlowker.Email %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!--
+        <div class="py-5 col-md-6">
+          <div class="row">
+            <div class="text-center col-3"><i class="d-block mx-auto fa fa-2x fa-volume-control-phone"></i></div>
+            <div class="col-8">
+              <h5 class="mb-3 text-primary"><b>Telepon</b></h5>
+              <p class="my-1">Build with blocks, yet modify easily. Customization is one click away and the graphic possibilities are infinite. </p>
+            </div>
+          </div>
+        </div>
+      -->
+      </div>
+
+
+    <!-- <a href="/pemberikerja/editlowkers/<%= addlowker._id%>"> <button type="button" class="btn btn-primary">Edit</button></a>
+    -->
+
+    <form action="/pemberikerja/delete/<%= addlowker._id%>" method="post">
+        <button type="submit" class="btn btn-outline-danger right"><i class="fa d-inline fa-lg fa-trash-o"></i>&nbsp; &nbsp;Hapus &nbsp; &nbsp;</button>
+
+        <a href="/pemberikerja/editlowkers/<%= addlowker._id%>" <a class="btn btn-outline-danger"><i class="fa d-inline fa-lg fa-pencil-square-o"></i>&nbsp;&nbsp; Edit&nbsp;&nbsp;</a>
+    </form>
+  </span>
+  </div>
+</div>
+<% include ../../public/ui_ux/footer %>

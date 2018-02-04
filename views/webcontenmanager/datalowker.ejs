@@ -1,0 +1,44 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/webcontenmanager_nav %>
+
+
+<div class="container-fluid">
+
+      <% if (addlowkers.length>0) { %>
+      <table class="table   table-bordered bg-warning">
+
+        <thead>
+          <tr class="table-active ">
+
+            <th>Nama Pekerjaan</th>
+            <th>Jenis Pekerjaan</th>
+            <th>Lokasi Pekerjaan </th>
+            <th>Gaji </th>
+            <th>Email </th>
+            <th>Tag </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<addlowkers.length;i++) { %>
+            <tr>
+
+              <td><a href="/webcontenmanager/showdatalowker/<%= addlowkers[i]._id%>"><%= addlowkers[i].NamaPekerjaan%></a></td>
+              <td><%= addlowkers[i].JenisPekerjaan%></td>
+              <td><%= addlowkers[i].LokasiPekerjaan%></td>
+              <td><%= addlowkers[i].Gaji %></td>
+              <td><%= addlowkers[i].Email %></td>
+
+              <td><%= addlowkers[i].Tag %></td>
+
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No employees found.</div>
+      <% } %>
+
+
+<div>
+<% include ../../public/ui_ux/footer %>

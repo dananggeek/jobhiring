@@ -1,0 +1,42 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pencarikerja_nav_index %>
+
+<div class="my-5 container">
+
+    <table class="table table-hover  ">
+        <tbody>
+          <td><h4> Profil </h4></td>
+          <tr>
+            <td>Username </td>
+            <td> <%=profil.login.username%></td>
+          </tr>
+          <tr>
+            <td>Alamat</td>
+            <td> <%=profil.pencarikerja.alamat%> </td>
+          </tr>
+          <tr>
+            <td> Email </td>
+            <td><%=profil.login.email%> </td>
+          </tr>
+          <tr>
+            <td> Nama </td>
+            <td><%=profil.pencarikerja.nama%> </td>
+          </tr>
+          <tr>
+            <td> Kelamin </td>
+            <td><%=profil.pencarikerja.kelamin%> </td>
+          </tr>
+
+
+
+          <tr>
+        </tbody>
+      </table>
+
+
+
+
+    <a href="/pencarikerja/profil/edituserpencarikerja/<%= profil._id%>" <a class="btn btn-outline-danger"><i class="fa d-inline fa-lg fa-pencil-square-o"></i>&nbsp;&nbsp; Edit&nbsp;&nbsp;</a>
+
+  <div>
+<% include ../../public/ui_ux/footer %>

@@ -1,0 +1,34 @@
+<% include ../../public/ui_ux/head %>
+<% include ../../public/ui_ux/pemberikerja_nav %>
+
+<div class="container">
+  <table class="table table-hover  ">
+      <tbody>
+        <td><h4> Profil Perusahaan </h4></td>
+        <tr>
+          <td>Username </td>
+          <td> <%=profil.login.username%></td>
+        </tr>
+        <tr>
+          <td>Alamat</td>
+          <td> <%=profil.pemberikerja.alamat%> </td>
+        </tr>
+        <tr>
+          <td> Email </td>
+          <td><%=profil.login.email%> </td>
+        </tr>
+        <tr>
+          <td> No Telepon </td>
+          <td><%=profil.pemberikerja.notelepon%></td>
+        </tr>
+        <tr>
+          <td> Deskripsi </td>
+          <td>  <%=profil.pemberikerja.deskrepsi%></td>
+        </tr>
+        <tr>
+      </tbody>
+    </table>
+  <a href="/pemberikerja/profil/user/edit/<%= profil._id%>" <a class="btn btn-outline-danger"><i class="fa d-inline fa-lg fa-pencil-square-o"></i>&nbsp;&nbsp; Edit&nbsp;&nbsp;</a>
+
+<div>
+<% include ../../public/ui_ux/footer %>
